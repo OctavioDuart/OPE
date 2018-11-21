@@ -80,14 +80,14 @@ router.get('/filter/candidate/:id' , function (req , res) {
      
     function promiseGetCandidate () {
         var id = req.params; 
-        return model_candidate.findById(id)
+        return model_candidate.findById(id.id)
     }
 
     function promiseReturnData (result) {
-        if (result === undefined || result === null || result.length === 0 ) {
-            return res.status(200).send(result);
-        }else{
+        if (result === undefined || result === null || result.length === 0 ) {           
             return res.status(200).send(false);
+        }else{
+            return res.status(200).send(result);
         }
     }
 
@@ -97,5 +97,29 @@ router.get('/filter/candidate/:id' , function (req , res) {
 
     
 });
+
+router.put("/update/candidate/:id" , function (req , res ) {
+        return promise.try(promiseUpdateCandidate)
+                      .then(promiseReturn)
+                      .catch(promiseError)
+    
+        function  promiseUpdateCandidate () {
+                if (req.body.pcd.answer == "Não") {
+                        req.body.pcd.answer = false ;
+                }else{
+                    req.body.pcd.answer = true ; 
+                }
+              return model_candidate.findByIdAndUpdate(req.params.id , req.body   )
+        }
+
+        function promiseReturn (result) {
+            return res.status(200).send(true);
+        }
+
+        function promiseError (ex) {
+            return res.status(500).send("Error in API ==> " , ex.message)
+        }
+})
+
 
 module.exports = app => app.use('/' , router); 
