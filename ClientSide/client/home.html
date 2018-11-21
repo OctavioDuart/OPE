@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Joplin's</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../public/main.css" />
+    <link rel="stylesheet" type="text/css" href="../public/animate.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"  />        
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../js/controller.js"></script>
+</head>
+<body ng-controller="myCtrl as vm">
+    <div class="col-md-12 img-background">
+        <div class="col-md-12">
+            <nav id="top-menu" class="animated fadeInDown" >
+                <ul>                   
+                    <li>O Projeto</li>
+                    <li>Faça Parte</li>
+                    <li>Sugestões</li>
+                    <li>Por que a Joplin's</li>
+                    <li>Login</li>
+                </ul>
+            </nav>
+        </div>        
+    </div>    
+    <!--Sessão  Projeto -->
+    <section class="theProject">
+        <p class="text-center title-project">O Projeto</p>
+        <p class="text-description-project">                   
+            A Joplin's é uma plataforma online que tem como finalidade capacitar jovens desfavorecidos
+            e encaminha-los para o mercado de trabalho. A própria plataforma disponibiliza diversos 
+            cursos certificados voltados para o mercado corporativo .    <br>
+            Aqui levamos como <b>prioridade</b> a ágilidade em processos que costumam ser burocráticos
+            sem deixar de lado a qualidade na prestação de nossos serviços . 
+        </p>      
+    </section>  
+    <hr style="background-color: black">
+    <!--Sessão Por que a Joplins-->
+    <section class="whyJoplins">
+            <p class="text-center title-project">Por que a Joplin's</p>
+            <p class="text-description-project">                   
+                Acreditamos ser a  <b>melhor escolha</b> para você porque vamos além de uma simples "recrutadora online" . <b>Aqui</b> 
+                os processos são mais ágeis e eficazes . Veja por que : 
+            </p>                          
+    </section>  
+
+    <div class="col-md-12">
+        <div class="vantagesJoplins">
+            <ul>
+                <li>
+                    <img src="../public/img/light.png" alt="Icone de ágilidade" />                   
+                </li>
+                <li>
+                    <img src="../public/img/medal.png" alt="Icone de ágilidade" />
+                </li>
+                <li>
+                    <img src="../public/img/like.png" alt="Icone de ágilidade" />
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12">
+            <div class="vantagesJoplinsTxt">
+                <ul>
+                    <li>Ágilidade</li>
+                    <li>Qualidade</li>
+                    <li>Facilidade</li>
+                </ul>
+            </div>
+        </div>
+    <section class="sectionPhrase">
+            <p class="text-center pharse">"Se você quer chegar a onde a maioria não chega, faça o que a maioria não faz . " </p>
+    </section>
+    <!-- Sessão Formulário Aluno -->
+    <section class="col-md-12">
+        <p class="text-center title-project">Faça Parte</p>
+        <form class="needs-validation">
+                <!--Sessão 1-->
+                <div class="form-row">
+                  <div class="col-md-3 mb-3">
+                        <label>Seu Nome</label>
+                        <input type="text" class="form-control" placeholder="Seu nome completo" required ng-model="vm.model.name">
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label >Nome de Tratamento</label>
+                    <input type="text" class="form-control" placeholder="Como devemos lhe chamar" required ng-model="vm.model.name_tratament">
+                  </div>
+            
+                  <div class="col-md-3 mb-3">
+                        <label >Data de Nascimento</label>
+                        <input type="date" class="form-control" required ng-model="vm.model.date_born">
+                  </div>
+                
+
+                  <div class="col-md-3">
+                      <label>Sexo</label>
+                      <select class="form-control" ng-model="vm.model.sex">
+                          <option value="Feminino">Feminino</option>
+                          <option value="Masculino">Masculino</option>
+                          <option value="Outro (a)">Outro (a)</option>
+                      </select>
+                  </div>
+                </div>
+                <!-- Sessão 2-->
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                            <label>RG</label>
+                            <input class="form-control" placeholder="Seu RG"  required ng-model="vm.documents.rg" minlength="9" maxlength="9" ng-model="vm.documents.rg">
+                    </div>  
+                 
+                    <div class="col-md-3 mb-3">
+                            <label>CPF</label>
+                            <input class="form-control" placeholder="Seu CPF"  required ng-model="vm.documents.cpf" minlength="11" maxlength="11" ng-model="vm.documents.cpf">
+                    </div>  
+
+                  <div class="col-md-3 mb-3">
+                        <label>Nº Carteira de Trabalho</label>
+                        <input class="form-control" placeholder="Nº da Carteira de Trabalho "  required  ng-model="vm.documents.work_number">
+                  </div>  
+                </div>
+
+                <!--Sessão 3 -->
+                <div class="form-row">
+                        <div class="col-md-3 mb-3">
+                                <label>Escolaridade</label>
+                                <select class="form-control" ng-model="vm.model.schooling">
+                                    <option value="Ensino Médio Completo">Ensino médio completo</option>
+                                    <option value="Ensino Médio Cursando">Ensino médio cursando</option>
+                                    <option value="Ensino Superior Completo">Ensino superior completo</option>
+                                    <option value="Ensino Superior Cursando">Ensino superior cursando</option>
+                                </select>
+                         </div>
+                         <div class="col-md-3 mb-3" >
+                                <label>Área de Estudo/Atuação (Pretendida)</label>
+                                <input type="text" class="form-control" placeholder="Pode ser algo que você faz ou pretende" ng-model="vm.model.study_area">
+                         </div>
+
+                         <div class="col-md-3 mb-3">
+                                <label>Seu Email</label>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                  </div>
+                                  <input type="text" class="form-control" id="validationCustomUsername" placeholder="Digite seu melhor email" aria-describedby="inputGroupPrepend" required ng-model="vm.contacts.email">
+                                </div>
+                         </div>
+
+                         <div class="col-md-3 mb-3" >
+                                <label>Telefone</label>
+                                <input type="text" class="form-control" placeholder="Seu telefone para contato" ng-model="vm.contacts.number">
+                         </div>
+
+                    </div>
+    
+                <!--Sessão 4-->
+               <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                            <label>Você possui alguma deficiência</label>
+                            <select class="form-control" ng-model="vm.pcd.answer">
+                               <option value="Sim" ng-click="vm.validPcd(true)">Sim</option>
+                               <option value="Não" ng-click="vm.validPcd(false)">Não</option>
+                            </select>
+                     </div>
+               </div>
+               <div class="form-row">
+                   <button class="btn btn-success" ng-click="vm.sendData(vm.model , vm.contacts , vm.documents ,  vm.pcd)">Enviar</button>
+                </div>
+              </form>
+    </section>  
+
+</body>
+</html>

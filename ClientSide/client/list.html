@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Listagem de Candidatos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../public/main.css" />
+    <link rel="stylesheet" type="text/css" href="../public/animate.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"  />        
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../js/list.js"></script>
+</head>
+<body ng-controller="myCtrlList as vm">
+        <h1 class=" text-center  animated fadeInDown">Listagem de Candidatos. </h1>
+
+        <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                     <th scope="col">ID</th> 
+                    <th scope="col">Nome</th>
+                    <th scope="col">Tratamento</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">PCD</th>
+                    <th scope="col">Escolaridade</th>
+                    <th scope="col">Área de Atuação/Estudo</th>
+                    <th scope="col">Ações</th>
+                </thead>
+               <tr ng-repeat="candidate in vm.result">
+                  <td>{{candidate._id}}</td>
+                  <td>{{candidate.name}}</td>
+                  <td>{{candidate.name_tratament}}</td>
+                  <td>{{candidate.sex}}</td>
+                  <td>{{candidate.contacts.email}}</td>
+                  <td>{{candidate.pcd.answer}}</td>
+                  <td>{{candidate.schooling}}</td>
+                  <td>{{candidate.study_area}}</td>
+                  <td><button class="btn btn-danger" ng-click="vm.deleteCandidate(candidate._id)">Deletar</button></td>
+               </tr>
+              
+         </table>
+</body>
+</html>
