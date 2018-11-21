@@ -27,7 +27,7 @@
                     data : dataForAPI
                 }).then(
                     function  (response) {
-                            if (response.data == 200 && response.data == true ) {
+                            if (response.status == 200 && response.data == true ) {
                                 alert ("Dados alterados ")
                                 vm.conditional = true ; 
                             }else {
@@ -48,14 +48,38 @@
                     url: 'http://localhost:8000/filter/candidate/' + idCandidate
                 }).then(
                     function (response) {
-                        if (response.data == 200 && response.data !== true) {
-                            vm.result = response
-                            console.log(vm.result);
+                        if (response.status == 200 && response.data !== false) {
+                            vm.model = {};
+                            vm.documents = {}; 
+                            vm.contacts = {};
+                            vm.pcd = {};
+
+                            vm.model.name = response.data.name;
+                            vm.model.name_tratament = response.data.name_tratament;
+                            vm.model.sex = response.data.sex;
+                            vm.model.schooling = response.data.schooling;
+                            vm.model.study_area = response.data.study_area;                               
+
+                            vm.documents.rg = response.data.documents.rg;
+                            vm.documents.cpf = response.data.documents.cpf;
+                            vm.documents.work_number = response.data.documents.work_number;
+
+                            vm.contacts.email = response.data.contacts.email;
+                            vm.contacts.number = response.data.contacts.number;
+
+                             if (response.data.pcd.answer == false){
+                                vm.pcd.answer = "Não"
+                            }else{
+                                vm.pcd.answer = "Sim"
+                            }
+                            vm.conditional = true ;
                         }
                          else if (response.data == 200 && response.data == false) {
                              alert("Não há candidatos com esse  ID")
+                             vm.conditional = false; 
                          }else{
-                             alert("Erro ao consultar")
+                             alert("Erro ao consultar"); 
+                             vm.conditional = false; 
                          }
                     }
                 )

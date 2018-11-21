@@ -27,22 +27,16 @@
             <div class="form-row">
               <div class="col-md-3 mb-3">
                     <label>Seu Nome</label>
-                    <input type="text" class="form-control" placeholder="Seu nome completo" required ng-model="vm.model.name">
+                    <input type="text" class="form-control" placeholder="Seu nome completo" required ng-model="vm.model.name" value="vm.model.name">
               </div>
               <div class="col-md-3 mb-3">
                 <label >Nome de Tratamento</label>
-                <input type="text" class="form-control" placeholder="Como devemos lhe chamar" required ng-model="vm.model.name_tratament">
+                <input type="text" class="form-control" placeholder="Como devemos lhe chamar" required ng-model="vm.model.name_tratament" value="vm.model.name_tratament">
               </div>
-        
-              <div class="col-md-3 mb-3">
-                    <label >Data de Nascimento</label>
-                    <input type="date" class="form-control" required ng-model="vm.model.date_born">
-              </div>
-            
-
+                               
               <div class="col-md-3">
                   <label>Sexo</label>
-                  <select class="form-control" ng-model="vm.model.sex">
+                  <select class="form-control" ng-model="vm.model.sex" value="vm.model.sex">
                       <option value="Feminino">Feminino</option>
                       <option value="Masculino">Masculino</option>
                       <option value="Outro (a)">Outro (a)</option>
@@ -53,7 +47,7 @@
             <div class="form-row">
                 <div class="col-md-3 mb-3">
                         <label>RG</label>
-                        <input class="form-control" placeholder="Seu RG"  required ng-model="vm.documents.rg" minlength="9" maxlength="9" ng-model="vm.documents.rg">
+                        <input class="form-control" placeholder="Seu RG"  required ng-model="vm.documents.rg" minlength="9" maxlength="9" value="vm.documents.rg">
                 </div>  
              
                 <div class="col-md-3 mb-3">
@@ -63,7 +57,7 @@
 
               <div class="col-md-3 mb-3">
                     <label>Nº Carteira de Trabalho</label>
-                    <input class="form-control" placeholder="Nº da Carteira de Trabalho "  required  ng-model="vm.documents.work_number">
+                    <input class="form-control" placeholder="Nº da Carteira de Trabalho "  required  ng-model="vm.documents.work_number" value="vm.documents.work_number">
               </div>  
             </div>
 
@@ -71,7 +65,7 @@
             <div class="form-row">
                     <div class="col-md-3 mb-3">
                             <label>Escolaridade</label>
-                            <select class="form-control" ng-model="vm.model.schooling">
+                            <select class="form-control" ng-model="vm.model.schooling" value="vm.model.schooling">
                                 <option value="Ensino Médio Completo">Ensino médio completo</option>
                                 <option value="Ensino Médio Cursando">Ensino médio cursando</option>
                                 <option value="Ensino Superior Completo">Ensino superior completo</option>
@@ -80,7 +74,7 @@
                      </div>
                      <div class="col-md-3 mb-3" >
                             <label>Área de Estudo/Atuação (Pretendida)</label>
-                            <input type="text" class="form-control" placeholder="Pode ser algo que você faz ou pretende" ng-model="vm.model.study_area">
+                            <input type="text" class="form-control" placeholder="Pode ser algo que você faz ou pretende" ng-model="vm.model.study_area" value="vm.model.study_area">
                      </div>
 
                      <div class="col-md-3 mb-3">
@@ -89,13 +83,13 @@
                               <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
                               </div>
-                              <input type="text" class="form-control" id="validationCustomUsername" placeholder="Digite seu melhor email" aria-describedby="inputGroupPrepend" required ng-model="vm.contacts.email">
+                              <input type="text" class="form-control" id="validationCustomUsername" placeholder="Digite seu melhor email" aria-describedby="inputGroupPrepend" required ng-model="vm.contacts.email" value="vm.contacts.email" >
                             </div>
                      </div>
 
                      <div class="col-md-3 mb-3" >
                             <label>Telefone</label>
-                            <input type="text" class="form-control" placeholder="Seu telefone para contato" ng-model="vm.contacts.number">
+                            <input type="text" class="form-control" placeholder="Seu telefone para contato" ng-model="vm.contacts.number"  value="vm.contacts.email">
                      </div>
 
                 </div>
@@ -103,7 +97,7 @@
            <div class="form-row">
                 <div class="col-md-3 mb-3">
                         <label>Você possui alguma deficiência</label>
-                        <select class="form-control" ng-model="vm.pcd.answer">
+                        <select class="form-control" ng-model="vm.pcd.answer"  value="vm.pcd.answer">
                            <option value="Sim" ng-click="vm.validPcd(true)">Sim</option>
                            <option value="Não" ng-click="vm.validPcd(false)">Não</option>
                         </select>
